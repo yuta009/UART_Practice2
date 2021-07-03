@@ -110,7 +110,9 @@ int main(void)
   //&data2[0][0]だと、START、TESTの先頭から5文字送信
   //&data2[0][1]だと、START、TESTの先頭2文字目から5文字送信（TARTT）
   HAL_UART_Transmit(&huart2,&data2[0][0],10,100); //STARTを送信
+  HAL_UART_Transmit(&huart2,&data2[0][0],sizeof(data2[0]),100); //STARTを送信
   HAL_UART_Transmit(&huart2,&data2[1][0],10,100); //TESTを送信
+  HAL_UART_Transmit(&huart2,&data2[1][0],sizeof(data2[1]),100); //TESTを送信
   HAL_UART_Transmit(&huart2,&data2[0][1],5,100); //START、TESTの先頭2文字目から5文字送信（表示文字TART）
   //HAL_UART_Transmit(&huart2,&data2[3][0],5,100); →5文字に対して、SuperTestが長すぎる。
   //HAL_UART_Transmit(&huart1,data1,strlen((char*)data1),100);
