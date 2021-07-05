@@ -107,6 +107,8 @@ int main(void)
 
   //uint8_t data1[] = "UART1";
   uint8_t data2[10][10] = {"START\r\n","TEST\r\n","Push\r\n","123456789"}; //\r\n ：改行
+  //uint8_t data4[10] = {"START\r\n","TEST\r\n","Push\r\n","123456789"}; //\r\n ：改行
+  //uint8_t data3[][] = {"START\r\n","TEST\r\n","Push\r\n","123456789"}; //\r\n ：改行
   //&data2[0][0]だと、START、TESTの先頭から5文字送信
   //&data2[0][1]だと、START、TESTの先頭2文字目から5文字送信（TARTT）
   HAL_UART_Transmit(&huart2,&data2[0][0],10,100); //STARTを送信
